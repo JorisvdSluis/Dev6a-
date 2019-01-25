@@ -27,27 +27,73 @@ namespace dev6a
             {
                 Slots[initialSlot] = NewEntry;
                 Entries++;
-
+                 Console.WriteLine("added" + Hashcode + "immediate");
             }
+             else
+             {
+                    if (Slots[initialSlot].Key.Equals(key)){
+                        throw new ArgumentException("Key already exists");
+                    }
+             
             else
             {
-                int i = 1;
-                while (Slots[initialSlot + i] != null)
-                {
-                    i++;
+                var pot = initialSlot + 1;
+                while (Slots[pot] != null){
+                    pot ++;
+                    if(pot >= Size)pot = 0;
+                    if(pot == initialSlot)return;
                 }
+                Console.WriteLine("added" + Hashcode);
+                Slots[pot] = NewEntry;
+                // int i = 1;
+                // while (Slots[initialSlot + i] != null)
+                // {
+                //     i++;
+                // }
 
-                Slots[initialSlot + i] = NewEntry;
-                Entries++;
+                // Slots[initialSlot + i] = NewEntry;
+                // Entries++;
 
             }
             CheckLoadFactor();
-           
+             }  
         }
         
-        public void Get()
+        public V Get(int GivenKey)
         {
-            
+            int KeySlot  = GivenKey.GetHashCode() % Size;
+            if(Slots[KeySlot] == null){ throw new Exception("no value with that hashcode");}
+                     
+           if(Slots[KeySlot].Key.Equals(GivenKey)){
+               return Slots[KeySlot].Value;
+           }
+
+           
+               for(int i = 1; i< Size; i ++){
+
+                int NextKey =KeySlot + i;
+                    if(NextKey > Size)
+                    {
+                        NextKey = i - 1;
+                          Console.WriteLine("greater than size");
+                    }
+                     if(Slots[NextKey] == null)
+                    {
+                         Console.WriteLine("broke");
+                         break;
+                        
+                    }
+
+                    if(Slots[NextKey].Key.Equals(GivenKey))
+                    {
+                          Console.WriteLine("returns");
+                        return Slots[NextKey].Value;
+                    }
+               }
+           
+           throw new Exception("key does not exists");
+           
+           
         }
 
         private void CheckLoadFactor()
