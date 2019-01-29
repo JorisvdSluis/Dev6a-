@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Joris\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Joris\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Dev6a-.-1480020161.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Joris\dev\Dev6a-" t="IncludeRecursive">
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="BinaryTree.cs" t="Include" />
+      <e p="dev6a.csproj" t="IncludeRecursive" />
+      <e p="dev6a.csproj.DotSettings" t="Include" />
+      <e p="DoublyLinkedList.cs" t="Include" />
+      <e p="Graph.cs" t="Include" />
+      <e p="HashTable.cs" t="Include" />
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp2.1" t="Include">
+            <e p="dev6a.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Program.cs" t="Include" />
+      <e p="Queue.cs" t="Include" />
+      <e p="Search.cs" t="Include" />
+      <e p="Sort.cs" t="Include" />
+      <e p="SortedLinkedList.cs" t="Include" />
+      <e p="Stack.cs" t="Include" />
+    </e>
+  </component>
+</project>

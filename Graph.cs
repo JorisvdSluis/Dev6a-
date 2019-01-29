@@ -112,25 +112,19 @@ namespace dev6a
             }
         }
 
-        // public void Dijkstr(T source)
-        // {
-        //     var VertexSet = new List<Vertice<T>>();
-        //     foreach(Vertice<T> v in Nodes){
-        //         var distance = int.MaxValue;
-        //         int previous ;
-        //         VertexSet.Add(v);
-        //     }
-        //     source.distance = 0;
-        //     while(VertexSet.Count != 0){
-        //         int minDistance = 0;
-        //        var u = v.vertices;
-        //         VertexSet.Remove(u);
+        /*public void Dijkstra()
+        {
+            List<Vertice<T>> q = new List<Vertice<T>>();
+            int count;
+            int[] distance =new int[ count];
+            foreach (Vertice<T> v in Nodes)
+            {
+              distance[v.Value] = int.IsNegativeInfinity;
+                int[] previous;
+            }
+        }*/
 
-        //         foreach(var v in u.vertices){
-        //             int alt = sourceDistance + 
-        //         }
-        //     }
-        // }
+  
     }
     public class Vertice<T> where T : IComparable
     {

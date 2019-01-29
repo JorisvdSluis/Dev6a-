@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using static Search.Search;
 using static Sort.Sort;
 using static dev6a.LList<int>;
+
 namespace dev6a
 {
     class Program
@@ -15,23 +16,28 @@ namespace dev6a
 
       
         static LNode<int> node = new LNode<int>() {Value = 2, Next = node2};
+
+       
         static LList<int> list = new LList<int>(){Start = node};
+        
+        static DoublyLinkedList<int> dlist = new DoublyLinkedList<int>(){Start = null, End = null};
         static Stack<int> stack= new Stack<int>();
         static HashTable<int, string> hash = new HashTable<int, string>(10);
 
         static BinaryTree<int> bst = new BinaryTree<int>();
        
         static Graph<int> graph = new Graph<int>();
-         static void Main()
+
+        static void Main()
         {
             //Generic Linear Search
-        //    int search = LinearSearch(array, 2);
-        //     Console.WriteLine(search);
-            
-        //     int searchString = LinearSearch(stringArray, "doei");
-        //     Console.WriteLine(searchString);
+            //    int search = LinearSearch(array, 2);
+            //     Console.WriteLine(search);
 
-        // Generic binary search
+            //     int searchString = LinearSearch(stringArray, "doei");
+            //     Console.WriteLine(searchString);
+
+            // Generic binary search
 //        int search = BinarySearch(array, 1, Comparer<int>.Default);
 //        Console.WriteLine(search);
 
@@ -41,7 +47,7 @@ namespace dev6a
 //            {
 //                Console.WriteLine(VARIABLE);
 //            }
-            
+
             // search linked list
 
 //            LNode<int> search = list.ListSearch(4);
@@ -67,60 +73,72 @@ namespace dev6a
 //            stack.push(7);
 //            
 //            Console.WriteLine(stack._list[1]+","+stack._list[0]);
-            
+
             //hashtable
-         //  hash.Put(2,"hoi6");
-          //  hash.Put(3,"hoi6");
-           // hash.Put(4,"hoi5");
-        //     hash.Put(5,"hoi4");
-        //     hash.Put(15,"hoi3");
-        //   //  hash.Put(25,"hoi2");
-        //     int key = (15);
-        //    // int codekey = key.GetHashCode();
-        //     // int code = (7.GetHashCode() % hash.Size);
-        //     // string cod = hash.Slots[code].Value;
-        //     // //  Console.WriteLine(cod);
-        //    var getValue = hash.Get(key);
-        //    //Console.WriteLine(codekey);
-           
-        //  Console.WriteLine(getValue);
+            //  hash.Put(2,"hoi6");
+            //  hash.Put(3,"hoi6");
+            // hash.Put(4,"hoi5");
+            //     hash.Put(5,"hoi4");
+            //     hash.Put(15,"hoi3");
+            //   //  hash.Put(25,"hoi2");
+            //     int key = (15);
+            //    // int codekey = key.GetHashCode();
+            //     // int code = (7.GetHashCode() % hash.Size);
+            //     // string cod = hash.Slots[code].Value;
+            //     // //  Console.WriteLine(cod);
+            //    var getValue = hash.Get(key);
+            //    //Console.WriteLine(codekey);
 
-        //BST
+            //  Console.WriteLine(getValue);
 
-    //     bst.Insert(5);
-    //      bst.Insert(4);
-    //       bst.Insert(6);
-    //        bst.Insert(3);
-    //         bst.Insert(7);
-    //     //    bst.Insert(2);
-    //     //    bst.Insert(8);
+            //BST
 
-    //       //bst.Delete(3);
-    //  bst.Delete(7);
+            //     bst.Insert(5);
+            //      bst.Insert(4);
+            //       bst.Insert(6);
+            //        bst.Insert(3);
+            //         bst.Insert(7);
+            //     //    bst.Insert(2);
+            //     //    bst.Insert(8);
 
-    //     bst.DisplayTree();
+            //       //bst.Delete(3);
+            //  bst.Delete(7);
 
-    //graph
-    graph.Insert(1, null);
-    graph.Insert(2, new List<int>{1});
-  graph.Insert(3, new List<int>{2});
-graph.Insert(4, new List<int>{3});
-       graph.Insert(5,new List<int>{3} );
-        graph.Insert(6, new List<int>{2});
-     graph.Insert(7, new List<int>{1});
-   graph.Insert(8, new List<int>{1});
-   graph.Insert(9, new List<int>{8});
-   graph.Insert(10, new List<int>{9});
-   graph.Insert(11, new List<int>{9});
-   graph.Insert(12, new List<int>{8});
+            //     bst.DisplayTree();
 
-           graph.BFS();
-           Console.WriteLine("next dfs");
-           graph.DFS();
-           Console.WriteLine("next dijkstra");
-           //graph.Dijkstra();
-           Console.WriteLine("Succesfull");
-        //  Console.WriteLine(graph.Nodes[3].Value.ToString() + graph.Nodes[3].Vertices[4].ToString());
+            //graph
+            
+                /*  graph.Insert(1, null);}
+                    graph.Insert(2, new List<int>{1});
+                  graph.Insert(3, new List<int>{2});
+                graph.Insert(4, new List<int>{3});
+                       graph.Insert(5,new List<int>{3} );
+                        graph.Insert(6, new List<int>{2});
+                     graph.Insert(7, new List<int>{1});
+                   graph.Insert(8, new List<int>{1});
+                   graph.Insert(9, new List<int>{8});
+                   graph.Insert(10, new List<int>{9});
+                   graph.Insert(11, new List<int>{9});
+                   graph.Insert(12, new List<int>{8});
+                
+                           graph.BFS();
+                           Console.WriteLine("next dfs");
+                           graph.DFS();
+                           Console.WriteLine("next dijkstra");
+                           //graph.Dijkstra();
+                           Console.WriteLine("Succesfull");
+                        //  Console.WriteLine(graph.Nodes[3].Value.ToString() + graph.Nodes[3].Vertices[4].ToString());
+                        }*/
+             //doublylinkedlist
+             
+            
+//             
+            dlist.DoublyInsertStart(5);
+            dlist.DoublyInsertStart(7);
+            dlist.DoublyInsertStart(9);
+            dlist.ListInsertAfter(4, 9);
+            dlist.DListSearch(dlist.Start.Next.Value);
+            dlist.DListSearch(dlist.Start.Next.Next.Value);
         }
     }
 }
